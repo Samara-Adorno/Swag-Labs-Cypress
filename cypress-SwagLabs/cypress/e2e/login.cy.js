@@ -36,14 +36,23 @@ describe('Funcionalidade de Login - Swag Labs', () => {
     })
 
     // Login com campos vazios
-    it('Dado que quero logar no sistema, Quando eu tentar acessar o sistema com o campos vazios, Então deve impedir login e exibir alerta', () => {
-        const username = '';
-        const password = '';
+    it('Dado que quero logar no sistema, Quando eu tentar acessar o sistema não preenchendo nenhum campo do formulário, Então deve impedir login e exibir alerta', () => {
+
+        cy.visit('https://www.saucedemo.com/')
+        cy.get('.login-box input[name="login-button"]').contains('Login').click()
+        cy.get('[data-test="error"]').should('be.visible').and('contain.text', 'Epic sadface: Username is required')
+    })
+
+    // Login com usuário problmamático
+    it('Dado que quero logar no sistema, Quando eu digitar um usuário problemático, Então deve exibir uma mensagem de erro de carregamento', () => {
+        const username = 'problem_user';
+        const password = 'secret_sauce';
 
         cy.visit('https://www.saucedemo.com/')
         cy.get('.login-box input[name="user-name"] ').type(username, {force: true})
         cy.get('.login-box input[name="password"] ').type(password, {force: true})
         cy.get('.login-box input[name="login-button"]').contains('Login').click()
-        cy.get('[data-test="error"]').should('be.visible').and('contain.text', 'Epic sadface: Username is required')
+        cy.get('.inventory_item_img').should('be.visible')
+        cy.get('.inventory_item_img').first().click()
     })
 });
