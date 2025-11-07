@@ -20,19 +20,21 @@ Os testes seguem a estrutura **Gherkin** (`Dado`, `Quando`, `Então`) para sua m
 
 ## 🧩 Estrura do projeto
 
-| cypress-SwagLabs/ |
-| :--- | :--- | 
-├─ cypress/ 
-│  ├─ e2e/                
-│  └─  cart.cy |
-│  └─ checkout.cy.js | 
-│  └─ login.cy.js | 
-│  └─ products.cy.js | 
+| cypress-/ | SwagLabs |
+| :--- | :--- |
+ cypress/ 
+├─ e2e/ 
+│ 
+│  └─  cart.cy  | 
+│  └─ checkout.cy.js |
+|  └─ login.cy.js |
+│  └─ products.cy.js |
 
 ---
 
 ## 🧪 Casos de Teste
 
+# Login
 | Funcionalidade | Teste | Resultado Esperado |
 | :--- | :--- | :--- |
 | Login | ✅ Login com credenciais válidas | Redirecionar para página de produtos |
@@ -41,6 +43,7 @@ Os testes seguem a estrutura **Gherkin** (`Dado`, `Quando`, `Então`) para sua m
 | Login | ⚪ Login com campos vazios |  Impedir login e exibir alerta |
 | Login | ❌ Login com usuário problmamático |  Exibir mensagem de erro |
 
+# Produtos
 | Funcionalidade | Teste | Resultado Esperado |
 | :--- | :--- | :--- |
 | Produtos | ✅ Validar exibição da lista de produtos | Todos os produtos aparecem após login |
@@ -49,7 +52,7 @@ Os testes seguem a estrutura **Gherkin** (`Dado`, `Quando`, `Então`) para sua m
 | Produtos | ✅ Ordenação por Preço: Menor para o Maior | Produtos por preço em ordem crescente |
 | Produtos | ✅ Ordenação por Preço: Maior para o Menor | Produtos por preço em ordem decrescente |
 
-
+# Carrinho
 | Funcionalidade | Teste | Resultado Esperado |
 | :--- | :--- | :--- |
 | Carrinho | ✅ Adicionar 1 produto ao carrinho | Contador do carrinho = 1 |
@@ -57,6 +60,7 @@ Os testes seguem a estrutura **Gherkin** (`Dado`, `Quando`, `Então`) para sua m
 | Carrinho | ✅ Remover produto do carrinho | Carrinho atualiza corretamente|
 | Carrinho | ✅ Visualizar carrinho | Itens adicionados são exibidos |
 
+# Checkout
 | Funcionalidade | Teste | Resultado Esperado |
 | :--- | :--- | :--- |
 | Checkout | ✅ Preencher dados válidos | Avança para página de revisão |
