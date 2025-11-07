@@ -20,11 +20,9 @@ Os testes seguem a estrutura **Gherkin** (`Dado`, `Quando`, `Então`) para sua m
 
 ## 🧩 Estrura do projeto
 
-| cypress-/ | SwagLabs |
+| cypress - | SwagLabs |
 | :--- | :--- |
- cypress/ 
-├─ e2e/ 
-│ 
+ cypress/ ├─ e2e/ │ 
 │  └─  cart.cy  | 
 │  └─ checkout.cy.js |
 |  └─ login.cy.js |
